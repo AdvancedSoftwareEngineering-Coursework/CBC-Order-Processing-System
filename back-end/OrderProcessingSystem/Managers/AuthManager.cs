@@ -16,7 +16,7 @@ public class AuthManager
         {
             UserName = registerDto.Username,
             Email = registerDto.Email,
-            Created = DateTime.UtcNow
+            CreatedDate = DateTime.UtcNow
         };
         
         var result = await _userManager.CreateAsync(user, registerDto.Password);

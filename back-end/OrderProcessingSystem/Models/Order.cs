@@ -1,7 +1,7 @@
 namespace OrderProcessingSystem.Models;
 public class Order
 {
-    public int OrderId { get; set; }
+    public int Id { get; set; }
     public required string UserId { get; set; } // Foreign key for User
     public required User User { get; set; } // Navigation property for User
 
