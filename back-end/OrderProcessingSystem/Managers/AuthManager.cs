@@ -21,7 +21,6 @@ public class AuthManager
         var result = await _userManager.CreateAsync(user, registerDto.Password);
         if (result.Succeeded)
         {
-            // Assign a role (e.g., "Customer") after successful registration
             await _userManager.AddToRoleAsync(user, "Customer");
         }
         return result;
