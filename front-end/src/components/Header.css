@@ -1,0 +1,47 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0056b3 !important; /* Blue background */
+    color: white;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 70px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .company-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    display: flex;
+  }
+  
+  .nav-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white !important;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover {
+    color: #a3a3a3 !important; /* Optional: lighter hover color */
+  }
+
+  .basket-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+  
+  

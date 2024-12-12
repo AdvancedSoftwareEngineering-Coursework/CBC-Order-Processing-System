@@ -16,6 +16,8 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<OrderStatus> OrderStatus { get; set; }
     public DbSet<Basket> Basket { get; set; }
     public DbSet<BasketItem> BasketItems { get; set; }
+    public DbSet<User> Users { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
