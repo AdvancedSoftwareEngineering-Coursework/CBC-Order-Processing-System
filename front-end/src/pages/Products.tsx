@@ -34,8 +34,8 @@ const Products: React.FC = () => {
       setProducts(initialProducts); // Reset to default order
     } else {
       const sortedProducts = [...products].sort((a, b) => {
-        const priceA = parseFloat(a.price.replace("£", ""));
-        const priceB = parseFloat(b.price.replace("£", ""));
+        const priceA = parseFloat(a.price.replace("$", ""));
+        const priceB = parseFloat(b.price.replace("$", ""));
         return sortOrder === "low-to-high" ? priceA - priceB : priceB - priceA;
       });
       setProducts(sortedProducts);
