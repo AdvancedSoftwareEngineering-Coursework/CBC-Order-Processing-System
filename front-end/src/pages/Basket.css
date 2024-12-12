@@ -10,13 +10,13 @@
   
   .basket-actions {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end; 
     margin: 20px 0;
     gap: 10px;
   }
   
   .basket-actions button {
-    padding: 5px 15px; /* Reduce size of the buttons */
+    padding: 5px 15px; 
     background-color: #308df0;
     color: white;
     border: none;
@@ -61,8 +61,8 @@
   }
   
   .quantity-controls button {
-    width: 10px; /* Smaller square buttons */
-    height: 5%; /* Consistent square shape */
+    width: 10px;
+    height: 5%; 
     background-color: #b0b0b0;
     color: white;
     border: none;
@@ -77,14 +77,14 @@
   
   /* Style for the Remove buttons */
   .remove-btn {
-    background: none; /* Transparent background */
-    color: red; /* Red text */
-    border: none; /* Remove any border */
+    background: none; 
+    color: red; 
+    border: none; 
     font-size: 12px;
-    text-align: left; /* Adjust text size if needed */
-    font-weight: bold; /* Make the text bold */
-    cursor: pointer; /* Pointer cursor to indicate it's clickable */
-    padding: 0; /* Remove any default padding */
+    text-align: left; 
+    font-weight: bold; 
+    cursor: pointer; 
+    padding: 0; 
   }
   
   .remove-btn:hover {
@@ -111,13 +111,13 @@
   
   .checkout-buttons {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end; 
     margin-top: 20px;
     gap: 10px;
   }
   
   .checkout-buttons button {
-    padding: 8px 15px; /* Slightly smaller buttons */
+    padding: 8px 15px; 
     background-color: #308df0;
     color: white;
     border: none;

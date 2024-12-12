@@ -77,8 +77,8 @@
 /* Product Grid Layout */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Ensures 4 products per row */
-    gap: 20px; /* Maintain spacing between items */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
 }
 
 /* Product Card Styling */

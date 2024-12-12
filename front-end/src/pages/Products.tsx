@@ -1,38 +1,64 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import { useBasket } from "../context/BasketContext";
-import './Products.css'; 
+import './Products.css';
 
 type Product = {
-    name: string;
-    price: string;
-    img: string;
-  };
+  name: string;
+  price: string;
+  img: string;
+};
 
-
-  const products: Product[] = [
-  { name: "Product 1", price: "$10", img: "https://individualproducts.com/wp-content/uploads/CHAP0010-Lemon-Neutral-Cleaner-1-1-300x300.jpg" },
-  { name: "Product 2", price: "$20", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaD3t-JUxUU9ahdjv-iuuJAQ-X4NKUNdoER9HTfA2CopgEMntokLIxFJV_PyCsnlEfIUc&usqp=CAU" },
-  { name: "Product 3", price: "$30", img: "https://individualproducts.com/wp-content/uploads/FCCCSH0001_General-Purpose-Spotter_Individual-1-300x300.jpg" },
-  { name: "Product 4", price: "$40", img: "https://individualproducts.com/wp-content/uploads/CHAP0015_Fantastico_Individual-1-300x300.jpg" },
-  { name: "Product 5", price: "$50", img: "https://individualproducts.com/wp-content/uploads/CHRE0005-Creme-Cleanser-Restrooms-1-1-2-300x300.jpg" },
-  { name: "Product 6", price: "$60", img: "https://individualproducts.com/wp-content/uploads/SCHSO0012-1-300x300.jpg" },
-  { name: "Product 7", price: "$70", img: "https://individualproducts.com/wp-content/uploads/SCHSO0012-1-300x300.jpg" },
-  { name: "Product 8", price: "$80", img: "https://individualproducts.com/wp-content/uploads/CHAP0010-Lemon-Neutral-Cleaner-1-1-300x300.jpg" },
-  { name: "Product 9", price: "$90", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaD3t-JUxUU9ahdjv-iuuJAQ-X4NKUNdoER9HTfA2CopgEMntokLIxFJV_PyCsnlEfIUc&usqp=CAU" },
-  { name: "Product 10", price: "$100", img: "https://individualproducts.com/wp-content/uploads/FCCCSH0001_General-Purpose-Spotter_Individual-1-300x300.jpg" },
-  { name: "Product 11", price: "$110", img: "https://individualproducts.com/wp-content/uploads/CHAP0015_Fantastico_Individual-1-300x300.jpg" },
-  { name: "Product 12", price: "$120", img: "https://individualproducts.com/wp-content/uploads/CHRE0005-Creme-Cleanser-Restrooms-1-1-2-300x300.jpg" },
+const initialProducts: Product[] = [
+  { name: "SparkleFresh", price: "$3.50", img: "https://individualproducts.com/wp-content/uploads/CHAP0010-Lemon-Neutral-Cleaner-1-1-300x300.jpg" },
+  { name: "UltraShine Degreaser", price: "$7.20", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaD3t-JUxUU9ahdjv-iuuJAQ-X4NKUNdoER9HTfA2CopgEMntokLIxFJV_PyCsnlEfIUc&usqp=CAU" },
+  { name: "GleamGuard", price: "$10.99", img: "https://individualproducts.com/wp-content/uploads/FCCCSH0001_General-Purpose-Spotter_Individual-1-300x300.jpg" },
+  { name: "LemonLift All-Purpose Cleaner", price: "$6.75", img: "https://individualproducts.com/wp-content/uploads/CHAP0015_Fantastico_Individual-1-300x300.jpg" },
+  { name: "ProSanitize Disinfectant", price: "$12.30", img: "https://individualproducts.com/wp-content/uploads/CHRE0005-Creme-Cleanser-Restrooms-1-1-2-300x300.jpg" },
+  { name: "EcoScrub Power Gel", price: "$8.50", img: "https://individualproducts.com/wp-content/uploads/SCHSO0012-1-300x300.jpg" },
+  { name: "CrystalClear Glass Cleaner", price: "$9.95", img: "https://individualproducts.com/wp-content/uploads/SCHSO0012-1-300x300.jpg" },
+  { name: "PureBreeze Floor Wash", price: "$11.49", img: "https://individualproducts.com/wp-content/uploads/CHAP0010-Lemon-Neutral-Cleaner-1-1-300x300.jpg" },
+  { name: "GrimeAway Heavy Duty Cleaner", price: "$15.99", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaD3t-JUxUU9ahdjv-iuuJAQ-X4NKUNdoER9HTfA2CopgEMntokLIxFJV_PyCsnlEfIUc&usqp=CAU" },
+  { name: "BrightFoam Bathroom Cleaner", price: "$5.75", img: "https://individualproducts.com/wp-content/uploads/FCCCSH0001_General-Purpose-Spotter_Individual-1-300x300.jpg" },
+  { name: "ShimmerShield Surface Cleaner", price: "$13.80", img: "https://individualproducts.com/wp-content/uploads/CHAP0015_Fantastico_Individual-1-300x300.jpg" },
+  { name: "StainZap Pro", price: "$18.20", img: "https://individualproducts.com/wp-content/uploads/CHRE0005-Creme-Cleanser-Restrooms-1-1-2-300x300.jpg" },
 ];
 
 const Products: React.FC = () => {
-  const { addToBasket } = useBasket(); // Use the addToBasket function from the context
+  const { addToBasket } = useBasket();
+  const [products, setProducts] = useState<Product[]>(initialProducts);
+
+  // Sort Products
+  const handleSort = (sortOrder: string) => {
+    if (sortOrder === "default") {
+      setProducts(initialProducts); // Reset to default order
+    } else {
+      const sortedProducts = [...products].sort((a, b) => {
+        const priceA = parseFloat(a.price.replace("£", ""));
+        const priceB = parseFloat(b.price.replace("£", ""));
+        return sortOrder === "low-to-high" ? priceA - priceB : priceB - priceA;
+      });
+      setProducts(sortedProducts);
+    }
+  };
 
   return (
     <div className="products-page">
       <Header />
       <div className="content">
         <h2 className="page-title">Products</h2>
+        <div className="sort-container">
+          <label htmlFor="sort">Sort By Price:</label>
+          <select
+            id="sort"
+            className="sort-dropdown"
+            onChange={(e) => handleSort(e.target.value)}
+          >
+            <option value="default">Default</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
+          </select>
+        </div>
         <div className="product-grid">
           {products.map((product, index) => (
             <div key={index} className="product-card">
@@ -48,7 +74,7 @@ const Products: React.FC = () => {
                 onClick={() =>
                   addToBasket({
                     ...product,
-                    quantity: 1, // Add default quantity
+                    quantity: 1,
                   })
                 }
               >
@@ -57,7 +83,6 @@ const Products: React.FC = () => {
             </div>
           ))}
         </div>
-        <br></br>
       </div>
     </div>
   );
