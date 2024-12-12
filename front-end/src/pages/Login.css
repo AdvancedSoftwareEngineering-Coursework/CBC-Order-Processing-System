@@ -1,0 +1,78 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.main-container {
+  text-align: center;
+}
+
+.page-title {
+  font-size: 28px;
+  text-align: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 10px auto; /* Added a small margin to avoid touching the title directly */
+  gap: 20px;
+}
+
+
+.login-form,
+.register-form {
+  flex: 1;
+  max-width: 45%;
+  background-color: #e3e3e3;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the text boxes horizontally */
+}
+
+/* Style for form labels */
+form label {
+  width: 80%; /* Match the input width */
+  text-align: left; /* Align the label text to the left */
+  margin-bottom: 5px; /* Add spacing between the label and the input */
+  font-weight: bold;
+}
+
+/* Style for form inputs */
+form input {
+  width: 80%; /* Match the label width */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block; /* Keeps inputs on separate lines */
+  text-align: left; /* Ensures text inside the input starts on the left */
+}
+
+form button {
+  width: 40%;
+  padding: 10px;
+  background-color: #308df0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,134 @@
+.basket-page {
+    font-family: Arial, sans-serif;
+  }
+  
+  .basket-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .basket-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin: 20px 0;
+    gap: 10px;
+  }
+  
+  .basket-actions button {
+    padding: 5px 15px; /* Reduce size of the buttons */
+    background-color: #308df0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 15%;
+  }
+  
+  .basket-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .basket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+  
+  .basket-table th,
+  .basket-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product-img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .quantity-controls button {
+    width: 10px; /* Smaller square buttons */
+    height: 5%; /* Consistent square shape */
+    background-color: #b0b0b0;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .quantity-controls button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the Remove buttons */
+  .remove-btn {
+    background: none; /* Transparent background */
+    color: red; /* Red text */
+    border: none; /* Remove any border */
+    font-size: 12px;
+    text-align: left; /* Adjust text size if needed */
+    font-weight: bold; /* Make the text bold */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    padding: 0; /* Remove any default padding */
+  }
+  
+  .remove-btn:hover {
+    text-decoration: underline;
+    background-color: #ffffff00;
+  }
+  
+  
+  .checkout-form input {
+    display: inline-block; 
+    width: 97%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+
+  }
+  
+  .order-summary {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .checkout-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .checkout-buttons button {
+    padding: 8px 15px; /* Slightly smaller buttons */
+    background-color: #308df0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 25%;
+    margin-bottom: 5%;
+  }
+  
+  .checkout-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
