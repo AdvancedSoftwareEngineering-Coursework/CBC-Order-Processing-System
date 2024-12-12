@@ -61,7 +61,6 @@ const Login: React.FC = () => {
       <div className="login-page">
         <div className="main-container">
           <div className="form-section">
-            {/* Login Form */}
             <div className="login-form">
               <h2>Log into your account</h2>
               <form onSubmit={handleLoginSubmit}>
@@ -82,8 +81,7 @@ const Login: React.FC = () => {
                 <button type="submit">LOG IN</button>
               </form>
             </div>
-
-            {/* Register Form */}
+            {/*Register Form*/}
             <div className="register-form">
               <h2>Register a new account</h2>
               <form onSubmit={handleRegisterSubmit}>

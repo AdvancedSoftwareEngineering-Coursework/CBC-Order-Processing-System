@@ -11,17 +11,15 @@ const StaffLogin: React.FC = () => {
   const handleStaffLoginSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     console.log("Logging in as staff with", staffEmail, staffPassword);
-    // You can call an API to log in here
+
   };
 
   return (
     <div className="login-page">
       <Header />
       <main className="main-container">
-        {/* Page Title */}
         <h2 className="page-title">Employee Portal</h2>
         <div className="form-image-container">
-          {/* Login Form */}
           <div className="login-form">
             <h3>Log into your account</h3>
             <form onSubmit={handleStaffLoginSubmit}>
@@ -43,7 +41,7 @@ const StaffLogin: React.FC = () => {
             </form>
           </div>
 
-          {/* Staff Image */}
+          
           <div className="staff-image">
             <img
               src="https://blog.ezclocker.com/wp-content/uploads/2021/05/training-cleaning-staff-1024x683.jpg"

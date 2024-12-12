@@ -50,7 +50,7 @@ const Basket: React.FC = () => {
                   </div>
                   <button
                     className="remove-btn"
-                    onClick={() => removeFromBasket(item.name)} // Pass 'item.name'
+                    onClick={() => removeFromBasket(item.name)} 
                   >
                     Remove
                   </button>
